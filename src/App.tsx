@@ -12,6 +12,7 @@ import { GithubSection } from './components/GithubSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { SectionDivider } from './components/SectionDivider';
+import { DevOpsCanvasBackground } from './components/DevOpsCanvasBackground';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -85,31 +86,38 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#070B12] dark:text-slate-100">
-        <Navbar theme={theme} onToggleTheme={toggleTheme} />
-        <main className="flex-1">
-          <HeroSection />
-          <SectionDivider variant="accent" />
-          <SnapshotMetrics />
+      <div className="relative min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-[#070B12] dark:text-slate-100">
+        {/* Global Dynamic DevOps Mesh & Telemetry Packet Background */}
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <DevOpsCanvasBackground />
+        </div>
+
+        <div className="relative z-10 flex min-h-screen flex-col">
+          <Navbar theme={theme} onToggleTheme={toggleTheme} />
+          <main className="flex-1">
+            <HeroSection />
+            <SectionDivider variant="accent" />
+            <SnapshotMetrics />
+            <SectionDivider />
+            <AboutSection />
+            <SectionDivider />
+            <ExpertiseSection />
+            <SectionDivider />
+            <ExperienceSection />
+            <SectionDivider variant="accent" />
+            <ProjectsSection />
+            <SectionDivider />
+            <ArchitectureShowcase />
+            <SectionDivider />
+            <CertificationsSection />
+            <SectionDivider />
+            <GithubSection />
+            <SectionDivider variant="accent" />
+            <ContactSection />
+          </main>
           <SectionDivider />
-          <AboutSection />
-          <SectionDivider />
-          <ExpertiseSection />
-          <SectionDivider />
-          <ExperienceSection />
-          <SectionDivider variant="accent" />
-          <ProjectsSection />
-          <SectionDivider />
-          <ArchitectureShowcase />
-          <SectionDivider />
-          <CertificationsSection />
-          <SectionDivider />
-          <GithubSection />
-          <SectionDivider variant="accent" />
-          <ContactSection />
-        </main>
-        <SectionDivider />
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </ErrorBoundary>
   );

@@ -7,7 +7,7 @@ export const CertificationsSection: React.FC = () => {
     <section
       id="certifications"
       aria-labelledby="certifications-heading"
-      className="bg-white dark:bg-[#090E17]"
+      className="bg-white/88 dark:bg-[#090E17]/84 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="max-w-3xl mb-10">

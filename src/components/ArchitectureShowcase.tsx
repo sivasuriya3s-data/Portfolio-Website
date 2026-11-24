@@ -15,7 +15,7 @@ export const ArchitectureShowcase: React.FC = () => {
     <section
       id="architecture"
       aria-labelledby="architecture-heading"
-      className="bg-slate-50 dark:bg-[#070B12]"
+      className="bg-slate-50/86 dark:bg-[#070B12]/80 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">

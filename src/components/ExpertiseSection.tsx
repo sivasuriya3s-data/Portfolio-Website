@@ -14,7 +14,7 @@ export const ExpertiseSection: React.FC = () => {
     <section
       id="expertise"
       aria-labelledby="expertise-heading"
-      className="bg-white dark:bg-[#090E17]"
+      className="bg-white/88 dark:bg-[#090E17]/84 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">

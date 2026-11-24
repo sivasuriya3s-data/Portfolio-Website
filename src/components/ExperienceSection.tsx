@@ -9,7 +9,7 @@ export const ExperienceSection: React.FC = () => {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="bg-slate-50 dark:bg-[#070B12]"
+      className="bg-slate-50/86 dark:bg-[#070B12]/80 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="max-w-3xl mb-12">

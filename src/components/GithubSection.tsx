@@ -77,7 +77,7 @@ export const GithubSection: React.FC = () => {
     <section
       id="github"
       aria-labelledby="github-heading"
-      className="bg-slate-50 dark:bg-[#070B12]"
+      className="bg-slate-50/86 dark:bg-[#070B12]/80 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">

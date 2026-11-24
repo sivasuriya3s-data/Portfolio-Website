@@ -96,7 +96,7 @@ export const ContactSection: React.FC = () => {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-white dark:bg-[#090E17]"
+      className="bg-white/88 dark:bg-[#090E17]/84 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">

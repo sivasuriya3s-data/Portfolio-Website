@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-50 dark:bg-[#070B12]">
+    <footer className="bg-slate-50/90 dark:bg-[#070B12]/85 backdrop-blur-[2px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
         <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
           <span className="font-display font-semibold text-slate-800 dark:text-slate-200">

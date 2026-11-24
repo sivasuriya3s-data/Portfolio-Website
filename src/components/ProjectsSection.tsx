@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { FEATURED_PROJECTS, FeaturedProject } from '../data/portfolioData';
 import { ProjectCaseStudyModal } from './ProjectCaseStudyModal';
 
@@ -10,7 +11,7 @@ export const ProjectsSection: React.FC = () => {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="bg-white dark:bg-[#090E17]"
+      className="bg-white/88 dark:bg-[#090E17]/84 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -33,9 +34,17 @@ export const ProjectsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {FEATURED_PROJECTS.map((project, index) => (
-            <article
+            <motion.article
               key={project.id}
-              className="group flex flex-col justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#0C1320] p-6 transition-colors hover:border-blue-500/50 dark:hover:border-cyan-500/50"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.28,
+                delay: index * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="group flex flex-col justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/85 dark:bg-[#0C1320]/90 p-6 transition-colors hover:border-blue-500/50 dark:hover:border-cyan-500/50"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3">
@@ -78,7 +87,7 @@ export const ProjectsSection: React.FC = () => {
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

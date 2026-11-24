@@ -15,7 +15,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative bg-tech-grid"
+      className="relative overflow-hidden bg-gradient-to-b from-slate-50/55 via-slate-50/40 to-slate-50/70 dark:from-[#070B12]/45 dark:via-[#070B12]/35 dark:to-[#070B12]/65"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">

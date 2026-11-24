@@ -73,7 +73,7 @@ export const SnapshotMetrics: React.FC = () => {
     <section
       ref={sectionRef}
       aria-labelledby="snapshot-heading"
-      className="bg-white dark:bg-[#090E17]"
+      className="bg-white/88 dark:bg-[#090E17]/84 backdrop-blur-[2px]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
