@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
           </a>
           <a
             href={RESUME_URL}
-            download="SivaSuriya_Resume.pdf"
+            download="Siva_Suriya_S_Resume.pdf"
             className="hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
           >
             Resume

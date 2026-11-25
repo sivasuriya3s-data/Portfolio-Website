@@ -30,7 +30,7 @@ export const ContactSection: React.FC = () => {
   const [form, setForm] = useState<FormState>({
     name: '',
     email: '',
-    subject: 'DevOps / Platform Engineering Inquiry',
+    subject: 'AI Engineering & Cloud Infrastructure Inquiry',
     message: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -113,8 +113,8 @@ export const ContactSection: React.FC = () => {
                 Let&apos;s Build Something Reliable, Secure &amp; Scalable.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                Reach out directly for DevOps, Cloud Architecture, Kubernetes, DevSecOps, or AI
-                Platform Engineering discussions.
+                Reach out directly for Agentic AI, LangGraph, MCP, LLMOps, Cloud Architecture,
+                Kubernetes, or DevSecOps engineering discussions.
               </p>
             </div>
 
@@ -209,7 +209,7 @@ export const ContactSection: React.FC = () => {
 
               <a
                 href={RESUME_URL}
-                download="SivaSuriya_Resume.pdf"
+                download="Siva_Suriya_S_Resume.pdf"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0C1320] hover:bg-slate-50 dark:hover:bg-slate-800 px-4 py-2.5 text-xs font-semibold text-slate-900 dark:text-slate-100 transition-colors whitespace-nowrap shrink-0"
               >
                 <Download className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" />

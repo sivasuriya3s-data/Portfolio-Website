@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Cloud,
-  Box,
-  Layers,
-  GitBranch,
-  ShieldCheck,
-  Activity,
+  Bot,
   Cpu,
+  Database,
+  Cloud,
+  ShieldCheck,
+  GitBranch,
+  Activity,
   ArrowRight,
   Pause,
   Play,
@@ -15,17 +15,17 @@ import { AnimatePresence, motion } from 'motion/react';
 import { HERO_PIPELINE_NODES, HeroNodeSpec } from '../data/portfolioData';
 
 const NODE_ICONS: Record<string, React.ReactNode> = {
-  aws: <Cloud className="w-4 h-4" />,
-  kubernetes: <Box className="w-4 h-4" />,
-  terraform: <Layers className="w-4 h-4" />,
-  cicd: <GitBranch className="w-4 h-4" />,
+  agents: <Bot className="w-4 h-4" />,
+  llmops: <Cpu className="w-4 h-4" />,
+  streaming: <Database className="w-4 h-4" />,
+  cloud: <Cloud className="w-4 h-4" />,
   security: <ShieldCheck className="w-4 h-4" />,
-  monitoring: <Activity className="w-4 h-4" />,
-  ai: <Cpu className="w-4 h-4" />,
+  cicd: <GitBranch className="w-4 h-4" />,
+  observability: <Activity className="w-4 h-4" />,
 };
 
 export const HeroArchitectureVisual: React.FC = () => {
-  const [selectedId, setSelectedId] = useState<string>('aws');
+  const [selectedId, setSelectedId] = useState<string>('agents');
   const [autoCycle, setAutoCycle] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -53,8 +53,8 @@ export const HeroArchitectureVisual: React.FC = () => {
   const selectedNode: HeroNodeSpec =
     HERO_PIPELINE_NODES.find((n) => n.id === selectedId) || HERO_PIPELINE_NODES[0];
 
-  const topRow = HERO_PIPELINE_NODES.slice(0, 4); // AWS -> Kubernetes -> Terraform -> CI/CD
-  const bottomRow = HERO_PIPELINE_NODES.slice(4, 7); // Security -> Monitoring -> AI Infra
+  const topRow = HERO_PIPELINE_NODES.slice(0, 4); // Agentic AI -> LLMOps & RAG -> Stream & Data -> AWS & K8s
+  const bottomRow = HERO_PIPELINE_NODES.slice(4, 7); // Zero-Trust -> DevSecOps -> Observability
 
   return (
     <div className="flex flex-col justify-between h-full rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-white/90 dark:bg-[#0B121E]/90 backdrop-blur-md p-5 sm:p-6 shadow-sm">
@@ -62,10 +62,10 @@ export const HeroArchitectureVisual: React.FC = () => {
       <div className="flex items-center justify-between gap-4 pb-4 border-b border-slate-200/80 dark:border-slate-800/80">
         <div>
           <h2 className="font-display text-sm font-semibold text-slate-900 dark:text-slate-100">
-            Enterprise Platform Topology
+            AI &amp; Infrastructure Control Plane
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-            Select any architecture layer to inspect production stack and outcomes
+            Inspect how Agentic AI reasoning meets zero-trust cloud infrastructure
           </p>
         </div>
 
@@ -103,13 +103,13 @@ export const HeroArchitectureVisual: React.FC = () => {
             y1="44"
             x2="520"
             y2="44"
-            className="stroke-blue-500/45 dark:stroke-blue-400/35 animate-flow-line"
+            className="stroke-cyan-500/45 dark:stroke-cyan-400/35 animate-flow-line"
             strokeWidth="1.6"
           />
           <path
             d="M 520 44 L 520 110 L 95 110 L 95 150"
             fill="none"
-            className="stroke-cyan-500/45 dark:stroke-cyan-400/35 animate-flow-line"
+            className="stroke-blue-500/45 dark:stroke-blue-400/35 animate-flow-line"
             strokeWidth="1.6"
           />
           <line
@@ -123,7 +123,7 @@ export const HeroArchitectureVisual: React.FC = () => {
         </svg>
 
         <div className="relative z-10 space-y-6">
-          {/* Row 1: AWS -> Kubernetes -> Terraform -> CI/CD */}
+          {/* Row 1: AI & Data Plane */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {topRow.map((node, index) => {
               const active = node.id === selectedId;
@@ -134,7 +134,7 @@ export const HeroArchitectureVisual: React.FC = () => {
                   onClick={() => handleSelectNode(node.id)}
                   className={`group relative flex flex-col items-start text-left rounded-lg border p-3 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                     active
-                      ? 'border-blue-500 dark:border-blue-400 bg-blue-50/90 dark:bg-blue-950/55 shadow-sm'
+                      ? 'border-cyan-500 dark:border-cyan-400 bg-cyan-50/85 dark:bg-cyan-950/40 shadow-sm'
                       : 'border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-[#0F1726] hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
@@ -142,7 +142,7 @@ export const HeroArchitectureVisual: React.FC = () => {
                     <span
                       className={`inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors ${
                         active
-                          ? 'bg-blue-600 text-white dark:bg-blue-500 dark:text-slate-950'
+                          ? 'bg-cyan-600 text-white dark:bg-cyan-400 dark:text-slate-950'
                           : 'bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
@@ -166,20 +166,20 @@ export const HeroArchitectureVisual: React.FC = () => {
           {/* Flow Direction Indicator */}
           <div className="flex items-center justify-between px-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
-              <span>AWS</span>
+              <span>Agentic AI</span>
+              <ArrowRight className="w-3 h-3 text-cyan-500" />
+              <span>LLMOps</span>
+              <ArrowRight className="w-3 h-3 text-cyan-500" />
+              <span>Streaming</span>
               <ArrowRight className="w-3 h-3 text-blue-500" />
-              <span>Kubernetes</span>
-              <ArrowRight className="w-3 h-3 text-blue-500" />
-              <span>Terraform</span>
-              <ArrowRight className="w-3 h-3 text-blue-500" />
-              <span>CI/CD</span>
+              <span>AWS &amp; K8s</span>
             </span>
-            <span className="hidden sm:inline text-cyan-600 dark:text-cyan-400">
-              Continuous Governance
+            <span className="hidden sm:inline text-blue-600 dark:text-blue-400">
+              AI + Infra Convergence
             </span>
           </div>
 
-          {/* Row 2: Security -> Monitoring -> AI Infra */}
+          {/* Row 2: Zero-Trust Security -> DevSecOps -> Observability */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {bottomRow.map((node, index) => {
               const active = node.id === selectedId;
@@ -190,7 +190,7 @@ export const HeroArchitectureVisual: React.FC = () => {
                   onClick={() => handleSelectNode(node.id)}
                   className={`group relative flex flex-col items-start text-left rounded-lg border p-3 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                     active
-                      ? 'border-cyan-500 dark:border-cyan-400 bg-cyan-50/80 dark:bg-cyan-950/35 shadow-sm'
+                      ? 'border-blue-500 dark:border-blue-400 bg-blue-50/90 dark:bg-blue-950/55 shadow-sm'
                       : 'border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-[#0F1726] hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
@@ -198,7 +198,7 @@ export const HeroArchitectureVisual: React.FC = () => {
                     <span
                       className={`inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors ${
                         active
-                          ? 'bg-cyan-600 text-white dark:bg-cyan-400 dark:text-slate-950'
+                          ? 'bg-blue-600 text-white dark:bg-blue-500 dark:text-slate-950'
                           : 'bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
@@ -221,7 +221,7 @@ export const HeroArchitectureVisual: React.FC = () => {
         </div>
       </div>
 
-      {/* Selected Layer Inspector with smooth state transition */}
+      {/* Selected Layer Inspector */}
       <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-[#090F19]/95 p-4 min-h-[126px]">
         <AnimatePresence mode="wait">
           <motion.div

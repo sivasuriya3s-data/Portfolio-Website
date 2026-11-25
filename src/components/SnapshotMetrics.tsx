@@ -22,12 +22,13 @@ const AnimatedMetricValue: React.FC<{ metric: SnapshotMetric; active: boolean }>
     let rafId = 0;
     const duration = 900;
     const start = performance.now();
+    const factor = Math.pow(10, metric.decimals ?? 0);
 
     const step = (now: number) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * metric.target));
+      setCount(Math.round(eased * metric.target * factor) / factor);
       if (progress < 1) {
         rafId = requestAnimationFrame(step);
       }
@@ -36,12 +37,15 @@ const AnimatedMetricValue: React.FC<{ metric: SnapshotMetric; active: boolean }>
     setCount(0);
     rafId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafId);
-  }, [active, metric.target]);
+  }, [active, metric.target, metric.decimals]);
+
+  const formatted =
+    metric.decimals && metric.decimals > 0 ? count.toFixed(metric.decimals) : String(count);
 
   return (
     <span className="font-mono text-3xl sm:text-4xl font-bold tracking-tight text-slate-950 dark:text-white tabular-nums">
       {metric.prefix || ''}
-      {count}
+      {formatted}
       <span className="text-blue-600 dark:text-cyan-400">{metric.suffix}</span>
     </span>
   );
@@ -89,8 +93,8 @@ export const SnapshotMetrics: React.FC = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md">
-            Documented individual and project-level engineering outcomes across cloud automation,
-            Kubernetes operations, CI/CD, and observability.
+            Documented AI engineering, LLMOps automation, streaming analytics, and DevSecOps
+            delivery outcomes.
           </p>
         </div>
 

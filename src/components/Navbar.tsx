@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
 
           <a
             href={RESUME_URL}
-            download="SivaSuriya_Resume.pdf"
+            download="Siva_Suriya_S_Resume.pdf"
             className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 px-4 py-2 text-xs font-semibold text-white dark:text-slate-950 transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#070B12]"
           >
             <Download className="h-3.5 w-3.5" />
@@ -164,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
             <div className="pt-3 mt-2 border-t border-slate-200 dark:border-slate-800">
               <a
                 href={RESUME_URL}
-                download="SivaSuriya_Resume.pdf"
+                download="Siva_Suriya_S_Resume.pdf"
                 className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 px-4 py-2.5 text-sm font-semibold text-white dark:text-slate-950 transition-colors"
               >
                 <Download className="h-4 w-4" />

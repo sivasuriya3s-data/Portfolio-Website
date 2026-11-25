@@ -6,7 +6,7 @@ import {
 } from './ArchitectureDiagrams';
 
 export const ArchitectureShowcase: React.FC = () => {
-  const [selectedBlueprint, setSelectedBlueprint] = useState<BlueprintId>('aws-multitenant');
+  const [selectedBlueprint, setSelectedBlueprint] = useState<BlueprintId>('agentic-soc');
 
   const current =
     ARCHITECTURE_BLUEPRINTS.find((b) => b.id === selectedBlueprint) || ARCHITECTURE_BLUEPRINTS[0];

@@ -1,43 +1,43 @@
 import React from 'react';
-import { GraduationCap, Cloud, Box, Layers, ShieldCheck, Cpu, Activity } from 'lucide-react';
+import { GraduationCap, Bot, Cpu, Database, Cloud, ShieldCheck, Activity } from 'lucide-react';
 import { CANDIDATE } from '../data/portfolioData';
 
 const FOCUS_PILLARS = [
   {
-    icon: <Cloud className="w-4 h-4 text-blue-600 dark:text-blue-400" />,
-    title: 'AWS & Multi-Cloud Infrastructure',
+    icon: <Bot className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
+    title: 'Agentic AI & Multi-Agent Orchestration',
     detail:
-      'Production architecture across AWS (EKS, Lambda, RDS, S3, VPC, PrivateLink), Azure (AKS), and GCP (GKE) with strict tenant isolation.',
-  },
-  {
-    icon: <Box className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
-    title: 'Kubernetes & Container Orchestration',
-    detail:
-      'Multi-cluster lifecycle management across EKS, AKS, k3s, and Rancher with Helm charts, ArgoCD GitOps, RBAC, and Kyverno admission control.',
-  },
-  {
-    icon: <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />,
-    title: 'Terraform Infrastructure Automation',
-    detail:
-      'Modular, multi-workspace Terraform and Ansible workflows creating repeatable, drift-free dev, staging, and production environments.',
-  },
-  {
-    icon: <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
-    title: 'Enterprise CI/CD & DevSecOps',
-    detail:
-      'Declarative pipelines in Jenkins, Harness, GitLab CI, and GitHub Actions enforced with SonarQube, Trivy, and OWASP Dependency-Check gates.',
+      'Stateful LangGraph workflows with conditional branching, supervisor-agent routing, MCP tool-calling servers, and human-in-the-loop governance.',
   },
   {
     icon: <Cpu className="w-4 h-4 text-blue-600 dark:text-blue-400" />,
-    title: 'Secure GenAI & RAG Infrastructure',
+    title: 'LLMOps, RAG & Grammar-Constrained Inference',
     detail:
-      'Production LLM gateways (LiteLLM) over Amazon Bedrock, OpenSearch vector RAG pipelines, LangGraph/MCP agents, PII redaction, and rate limiting.',
+      'vLLM Outlines, LiteLLM gateways over Amazon Bedrock and Azure OpenAI, PII-redaction guardrails, LLM-as-a-Judge evaluation, and hybrid vector search.',
   },
   {
-    icon: <Activity className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
-    title: 'Production Observability & Incident Management',
+    icon: <Database className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
+    title: 'Real-Time Streaming & Vector Data Engineering',
     detail:
-      'End-to-end telemetry using OpenTelemetry, Prometheus, Grafana, CloudWatch, and Loki paired with SLO-based runbooks and root cause analysis.',
+      'High-throughput Apache Kafka and Flink detection engines paired with ClickHouse temporal analytics, Redis entity state, OpenSearch, FAISS, and ChromaDB.',
+  },
+  {
+    icon: <Cloud className="w-4 h-4 text-blue-600 dark:text-blue-400" />,
+    title: 'AWS & Multi-Cloud Kubernetes Infrastructure',
+    detail:
+      'Modular Terraform workspaces provisioning EKS, AKS, Lambda, RDS, S3, and PrivateLink with Rancher, Helm, and ArgoCD GitOps delivery.',
+  },
+  {
+    icon: <ShieldCheck className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />,
+    title: 'Zero-Trust Security, OPA & DevSecOps',
+    detail:
+      'OPA 4-tier blast-radius authorization, Istio strict mTLS, IRSA permissions boundaries, AWS WAF, and Jenkins/SonarQube/Trivy/OWASP CI/CD gates.',
+  },
+  {
+    icon: <Activity className="w-4 h-4 text-blue-600 dark:text-blue-400" />,
+    title: 'AI Observability & Production Reliability',
+    detail:
+      'Tracing, token & cost optimization, Prometheus, Grafana, OpenTelemetry, CloudWatch, ELK, and Loki with SLI/SLO monitoring and RCA.',
   },
 ];
 
@@ -54,33 +54,34 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             <div>
               <p className="text-xs font-semibold text-blue-600 dark:text-cyan-400">
-                Engineering Philosophy
+                AI Developer &amp; Infrastructure Specialist
               </p>
               <h2
                 id="about-heading"
                 className="mt-2 font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white [text-wrap:balance]"
               >
-                Building the Infrastructure Behind Modern Technology.
+                Where Agentic AI Systems Meet Zero-Trust Infrastructure.
               </h2>
             </div>
 
             <div className="space-y-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
               <p>
-                I am a DevOps, DevSecOps, and Platform Engineer with 2+ years of hands-on experience
-                designing, automating, and operating cloud-native infrastructure at enterprise scale.
-                At Sify Technologies Limited, I architect secure multi-tenant AWS platforms and
-                containerized workloads built for reliability, auditability, and operational speed.
+                With 2.5 years of experience at Sify Technologies Limited, I progressed from Cloud
+                &amp; DevSecOps engineering into architecting and deploying production Agentic AI
+                systems—combining generative AI software engineering with deep infrastructure
+                ownership.
               </p>
               <p>
-                My work bridges traditional infrastructure reliability with modern AI platform
-                engineering—connecting private VPC topologies, Istio service-mesh mTLS, and shift-left
-                security pipelines directly to production Generative AI, RAG, and agentic systems on
-                Amazon Bedrock and OpenSearch.
+                On the AI engineering side, I specialize in multi-agent LangGraph orchestration,
+                Model Context Protocol (MCP) tool servers, RAG pipelines, grammar-constrained vLLM
+                inference, and human-in-the-loop evaluation platforms that cut manual review effort
+                by 70%.
               </p>
               <p>
-                Every system I deliver emphasizes repeatable Infrastructure as Code, automated
-                vulnerability gates, least-privilege IAM, and clear observability so engineering teams
-                can ship faster without compromising security or stability.
+                On the infrastructure side, I back every AI workload with reusable Terraform
+                modules, Amazon EKS and Azure AKS orchestration, Apache Kafka and Flink streaming,
+                Istio mTLS, and OPA policy-as-code—delivering low-latency, zero-trust systems from
+                prototype to enterprise production.
               </p>
             </div>
 

@@ -9,9 +9,10 @@ interface ProjectCaseStudyModalProps {
 }
 
 const DIAGRAM_MAP: Record<FeaturedProject['diagramType'], BlueprintId> = {
-  'ai-sdlc': 'aws-multitenant',
-  devsecops: 'devsecops-cicd',
-  'multi-k8s': 'k8s-deployment',
+  'agentic-soc': 'agentic-soc',
+  'mcp-firewall': 'mcp-firewall',
+  'hitl-eval': 'hitl-eval',
+  'aws-rag': 'aws-rag',
 };
 
 export const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({
